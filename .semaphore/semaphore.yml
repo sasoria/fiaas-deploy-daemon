@@ -21,4 +21,4 @@ promotions:
     auto_promote_on:
     - result: passed
       branch:
-        - "master"
+        - "birgirst/use-semaphore-ci"
