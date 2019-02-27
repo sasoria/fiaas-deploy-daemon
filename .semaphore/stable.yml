@@ -14,8 +14,8 @@ blocks:
           commands:
             - echo 'Promoting stable!'
             - checkout
-            - cache restore $SEMAPHORE_PROJECT_NAME-metadata
-            - cache restore $SEMAPHORE_PROJECT_NAME-version
+            - cache restore $SEMAPHORE_PROJECT_NAME-$SEMAPHORE_WORKFLOW_ID-metadata
+            - cache restore $SEMAPHORE_PROJECT_NAME-$SEMAPHORE_WORKFLOW_ID-version
             - version=$(cat version |tail -1)
             - export version
             - ./bin/upload_release_channel.sh stable

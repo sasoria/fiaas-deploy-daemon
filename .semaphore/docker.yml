@@ -22,8 +22,8 @@ blocks:
           - echo $version > version
           - export version
           - ./bin/upload_release_channel.sh
-          - cache store $SEMAPHORE_PROJECT_NAME-metadata ./release_channel.json
-          - cache store $SEMAPHORE_PROJECT_NAME-version version
+          - cache store $SEMAPHORE_PROJECT_NAME-$SEMAPHORE_WORKFLOW_ID-metadata ./release_channel.json
+          - cache store $SEMAPHORE_PROJECT_NAME-SEMAPHORE_WORKFLOW_ID-version version
           - echo "done"
 
 promotions:
